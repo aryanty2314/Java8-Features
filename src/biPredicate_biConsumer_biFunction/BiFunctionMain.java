@@ -1,4 +1,4 @@
-package BiPredicate_BiConsumer_BiFunction;
+package biPredicate_biConsumer_biFunction;
 
 import java.util.function.BiFunction;
 

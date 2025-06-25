@@ -1,0 +1,37 @@
+Java Streams are a feature introduced in Java 8 that allow functional-style operations on collections and sequences of data.
+Streams process data in a declarative way (what to do, not how to do it)
+,supporting operations like filtering, mapping, and reducing.
+
+Key Points:
+
+Streams do not store data; they operate on source data (like collections, arrays).
+Streams are lazy; computation happens only when a terminal operation is invoked.
+Streams can be sequential or parallel.
+
+Common Stream Methods:
+
+
+Creation :
+         stream(), of(), IntStream.range(), Arrays.stream()
+
+
+Intermediate Operations (return a new stream)
+         filter(Predicate<T>): Selects elements matching a condition.
+         map(Function<T, R>): Transforms each element.
+         flatMap(Function<T, Stream<R>>) : Flattens nested streams.
+         distinct(): Removes duplicates.
+         sorted(), sorted(Comparator<T>): Sorts elements.
+         limit(long n): Truncates the stream to n elements.
+         skip(long n): Skips the first n elements.
+         peek(Consumer<T>): Performs an action for each element (for debugging).
+
+
+Terminal Operations (produce a result or side-effect)
+
+         forEach(Consumer<T>): Performs an action for each element.
+         collect(Collector): Converts stream to a collection or other structure.
+         reduce(BinaryOperator<T>): Reduces elements to a single value.
+         count(): Counts elements.
+         anyMatch(Predicate<T>), allMatch(Predicate<T>), noneMatch(Predicate<T>): Match conditions.
+         findFirst(), findAny(): Returns an element if present.
+         toArray(): Converts stream to array.

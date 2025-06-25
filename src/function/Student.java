@@ -10,6 +10,12 @@ public Student()
 
 }
 
+    public Student(Student student)
+    {
+    this.name = student.name;
+    this.age = student.age;
+    }
+
     public String getName() {
         return name;
     }
