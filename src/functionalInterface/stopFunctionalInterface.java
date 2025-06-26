@@ -16,6 +16,6 @@ public interface stopFunctionalInterface extends startFunctionalInterface
     //public void stop();
 
     // this is not throwing error because both methods are same in the child and parent interface
-    public void start();
+    void start();
 
 }

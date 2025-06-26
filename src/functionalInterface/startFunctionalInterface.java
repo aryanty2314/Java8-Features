@@ -13,7 +13,7 @@ package functionalInterface;
 public interface startFunctionalInterface
 {
 
-    public void start();
+    void start();
 
     default String name(String s)
     {

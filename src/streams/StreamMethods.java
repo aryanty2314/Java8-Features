@@ -9,6 +9,11 @@ public class StreamMethods
 {
     public static void main(String[] args)
     {
+
+        System.out.println("------------------------------------------------------------------");
+
+        // Example of using Stream methods
+        // Create a list of strings
     List<String> list = List.of("apple", "banana", "cherry", "date", "elderberry", "fig", "grape" , "apple", "date");
     // Example of using Stream methods
 
@@ -38,6 +43,7 @@ public class StreamMethods
             //print the elements
             .forEach(System.out::println);
 
+        System.out.println("------------------------------------------------------------------");
 
      Stream.iterate(0, n -> n + 1)
             .limit(10)
@@ -50,5 +56,19 @@ public class StreamMethods
              .peek(x-> System.out.println("Processing: " + x))
              .min((a, b) -> b-a)
              .ifPresent(System.out::println);
+
+        System.out.println("------------------------------------------------------------------");
+
+     List<Integer> list1 = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+     List<List<Integer>> pairs = list1.stream()
+
+             // flatMap is used to flatten the stream of lists into a single stream
+             // it takes a function that returns a stream for each element
+             .flatMap(i -> list1.stream()
+                     .filter(j -> j > i && i+j == 10)
+                     .map(j -> List.of(i, j)))
+             .collect(Collectors.toList());
+
+        pairs.forEach(pair -> System.out.println("Pair: " + pair));
     }
 }
